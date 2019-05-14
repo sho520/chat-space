@@ -43,8 +43,8 @@ belongs_to :group
 
 |column     |type   |index|null  |unique|foreign_key|
 |-----------|-------|-----|------|------|-----------|
-|group_id   |integer|true |false |false |true       |
-|user_id    |integer|false|false |false |true       |
+|group_id   |references|true |false |false |true       |
+|user_id    |references|false|false |false |true       |
 
 ### Groupテーブル
 #Group_userテーブルとのアソシエーション
@@ -63,7 +63,7 @@ belongs_to :group
 
 |column     |type   |index|null  |unique|foreign_key|
 |-----------|-------|-----|------|------|-----------|
-|user_id    |integer|true |false |false |true       |
-|group_id   |integer|true |false |false |true       |
+|user_id    |references|true |false |false |true       |
+|group_id   |references|true |false |false |true       |
 |comment    |text   |false|true  |false |false      |
-|image      |text   |false|true  |false |false      |
+|image      |string |false|true  |false |false      |
