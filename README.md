@@ -26,8 +26,8 @@ Things you may want to cover:
 
 ### Userテーブル
 #Group_userテーブルとのアソシエーション
-has_many :groups ,through: :group_users  
-has_many :group_users  
+has_many :groups ,through: :group_users
+has_many :group_users
 #Comment テーブルのアソシエーション
 has_many :comments
 
@@ -35,10 +35,10 @@ has_many :comments
 |------|-------|-----|------|------|
 |name  |string |true |false |false |
 |email |string |false|false |true  |
-|password  |string |false|false |false |
+|password |string |false|false |false |
 
 ### Group_userテーブル(中間テーブル)
-belongs_to :user  
+belongs_to :user 
 belongs_to :group
 
 |column     |type   |index|null  |unique|foreign_key|
@@ -48,8 +48,8 @@ belongs_to :group
 
 ### Groupテーブル
 #Group_userテーブルとのアソシエーション
-has_many :users,through: :group_users  
-has_many :group_users  
+has_many :users,through: :group_users
+has_many :group_users
 #Comment テーブルのアソシエーション
 has_many :comments
 
