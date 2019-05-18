@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ChatSpace</title>
-    <%= csrf_meta_tags %>
+!!!
+%html
+  %head
+    = stylesheet_link_tag 'application', media: 'all'
+    %link{:href => "application.scss"}/
+    %script{"data-turbolinks-track" => "reload", :src => "/assets/application-92a91cf5753a538c5407a46c726acab43576fb46358ffa8a7ee0ee0719aa2f51.js"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpaceSample
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "L0Bvrkx0njJgnnYTtY4SoB8+17KizM9isvt0tJvNaFP/S4sBcYOJD/2XXIbB/5PyyvcTX+DuVDIDzaKQwW3d3g==", :name => "csrf-token"}/
+  %body
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+  = yield
