@@ -1,7 +1,5 @@
 .wrapper
-
   = render 'side_bar'
-
   .chat
     .header
       .left-header
@@ -17,7 +15,7 @@
             メンバー名
       .right-header
         .right-header__button
-          Edit
+        = link_to 'edit',"/groups/1/edit"
     .messages
       = render 'message'
     .form
@@ -28,3 +26,4 @@
             = fa_icon 'picture-o', class: 'icon'
             %input.hidden{type: 'file'}
         %input.form__submit{type: 'submit', value: 'Send'}
+
