@@ -27,7 +27,7 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバーを追加
     .chat-group-form__field--right
       / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      = form_tag('/users/search', method: :get) do
+      = form_for('/users/search', method: :get) do
         %input.chat__group_member.chat-group-form__input{name: "keyword", placeholder: "追加したいユーザー名を入力してください", type: "text", value: ""}
         #user-search-result
       .chat-group-form__field.clearfix
