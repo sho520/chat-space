@@ -57,7 +57,6 @@ return html;
         data: {id: last_message_id}
       })
       .done(function(data) {
-        console.log(data)
         var insertHTML = '';
        data.forEach(function(last_message){
          insertHTML += buildHTML(last_message)
