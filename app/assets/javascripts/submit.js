@@ -50,7 +50,6 @@ return html;
 
     var reloadMessages = function() {
       var last_message_id = $('.message:last').data('message');
-      // {data: {message: message.id}}
       $.ajax({
         url: "./api/messages",
         type: 'get',
@@ -58,8 +57,8 @@ return html;
         data: {id: last_message_id}
       })
       .done(function(data) {
+        console.log(data)
         var insertHTML = '';
-        // if(message.length !== 0){
        data.forEach(function(last_message){
          insertHTML += buildHTML(last_message)
         })
@@ -67,13 +66,7 @@ return html;
          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
-        // 通信失敗時の処理
-        alert('ファイルの取得に失敗しました。');
-        console.log("ajax通信に失敗しました");
-        console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
-        console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
-        console.log("errorThrown    : " + errorThrown.message); // 例外情報
-        console.log("URL            : " + url);
+      
       })
         };
 
