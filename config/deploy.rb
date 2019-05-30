@@ -37,8 +37,6 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-end
-
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
