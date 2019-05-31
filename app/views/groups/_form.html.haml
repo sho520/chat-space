@@ -9,7 +9,7 @@
     .chat-group-form__field--left
       = f.label :name, class: 'chat-group-form__label'
     .chat-group-form__field--right
-      = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
+      = f.text_field :name, class: 'chat__group_name chat-groupname-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバーを追加
@@ -20,10 +20,15 @@
       .chat-group-form__field.clearfix
     .chat-group-form__field--left
       = f.label :user_ids, "チャットメンバー", class: 'chat-group-form__label'
-    .chat-group-form__field--right
+    .chat-group-form__field--right 
       #chat-group-users
-        -# %input{ name: “group[user_ids][]“, type: “hidden”, value: current_user.id }/
-        %p.chat-group-user__name #{current_user.name}
+        .chat-group-user.clearfix.js-chat-member>
+          %input{:name => "group[user_ids][]", :type => "hidden", :value => current_user.id}
+          %p.chat-group-user__name #{current_user.name}
+          .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+        -# #chat-group-users
+          -# %input{ name: “group[user_ids][]“, type: “hidden”, value: current_user.id }/
+          -# %p.chat-group-user__name #{current_user.name}
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right
